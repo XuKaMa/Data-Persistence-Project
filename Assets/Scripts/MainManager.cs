@@ -61,27 +61,26 @@ public class MainManager : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene(0);
+            }
         }
     }
 
     void AddPoint(int point)
     {
         m_Points += point;
-        MenuManager.Instance.LoadName();
         ScoreText.text = $"Score : {m_Points}";
-        BestScoreText.text = $"BestScore: {MenuManager.Instance.Name.text} : {m_Points}";
+        BestScoreText.text = $"BestScore: {MenuManager.Instance.ScoreName} : {MenuManager.Instance.Score}";
     }
 
     public void GameOver()
     {
-        for(int x = 0; x < MenuManager.Instance.Score.Length; x++)
+        if (MenuManager.Instance.Score < m_Points)
         {
-            if (MenuManager.Instance.Score[x] < m_Points)
-            {
-                MenuManager.Instance.Score[x] = m_Points;
-                MenuManager.Instance.SaveScoreboard(x);
-                x = MenuManager.Instance.Score.Length;
-            }
+            MenuManager.Instance.Score = m_Points;
+            MenuManager.Instance.SaveScoreboard();
         }
         m_GameOver = true;
         GameOverText.SetActive(true);

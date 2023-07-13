@@ -9,9 +9,17 @@ using UnityEditor;
 
 public class MenuUIManager : MonoBehaviour
 {
+    public Text Name;
+    public Text Scoreboard;
+    private void Start()
+    {
+        MenuManager.Instance.LoadScoreboard();
+        Scoreboard.text = $"Bestscore: {MenuManager.Instance.ScoreName}: {MenuManager.Instance.Score}";
+    }
 
     public void StartNew()
     {
+        MenuManager.Instance.SaveName(Name.text);
         SceneManager.LoadScene(1);
     }
 
@@ -22,10 +30,5 @@ public class MenuUIManager : MonoBehaviour
 #else
         Application.Quit();
 #endif
-    }
-
-    public void SaveNameEnterd()
-    {
-        MenuManager.Instance.SaveName();
     }
 }

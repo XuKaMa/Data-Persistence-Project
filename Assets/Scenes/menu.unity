@@ -380,8 +380,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Scoreboard: {fileID: 1516774726}
   Name: {fileID: 1911477257}
-  Score: 
-  ScoreName: []
+  Score: 0
+  ScoreName: 
 --- !u!1 &476910544
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,19 +730,7 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1799908041}
-        m_TargetAssemblyTypeName: MenuUIManager, Assembly-CSharp
-        m_MethodName: SaveNameEnterd
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1265,6 +1253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25bc15d77b39d674da5bf60899e6ce5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: {fileID: 1911477257}
+  Scoreboard: {fileID: 1516774726}
 --- !u!1 &1911477255
 GameObject:
   m_ObjectHideFlags: 0
